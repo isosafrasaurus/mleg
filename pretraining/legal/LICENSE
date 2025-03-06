@@ -1,0 +1,152 @@
+VOLUNTEER DATA PROVISION AGREEMENT
+
+DATED {DATE}
+
+BETWEEN
+
+Pierce Zhang ({PIERCE_ZHANG_EMAIL}) and Alex Biyanov ({ALEX_BIYANOV_EMAIL}), hereinafter referred to as the "Developers";
+
+AND
+
+{VOLUNTEER_NAME} ({VOLUNTEER_EMAIL}), hereinafter referred to as the "Volunteer."
+
+DEFINITIONS
+
+For the purposes of this Agreement, the following terms shall have the meanings ascribed to them below:
+
+1.1. "Likeness Data" shall mean any and all data that constitutes an embodiment or representation of the Volunteer's Likeness. For the purposes of this Agreement, "Likeness" shall include, but not be limited to, the Volunteer's (i) visual appearance, encompassing photographic, video, and other visual representations of their face and body; and (ii) other distinctive personal attributes, characteristics, or indicia that serve to identify the Volunteer physically. Likeness Data may be derived from: (a) data of the types specified by Volunteer in Appendix A attached hereto ("Volunteer-Specified Data Types"), which Volunteer may, at their discretion, elect to provide to Developers; and (b) any and all images, recordings, and data embodying Volunteer's Likeness that are publicly accessible or available from public sources, which Developers may independently obtain.
+
+1.2. "Platform" shall mean the MLEG software operated and developed by the Developers.
+
+1.3. "Purpose" shall mean the singular purpose of training the Platform to generate consistent character imagery, as intended by Developers and expressly acknowledged by Volunteer. Any and all uses of Likeness Data beyond the scope of this defined Purpose are strictly prohibited.
+
+1.4. "Term" shall mean the effective duration of this Agreement, commencing on the Date first written above and continuing until terminated in accordance with Article 6 herein.
+
+DATA SPECIFICATION, ACQUISITION, AND LICENSE GRANT
+
+2.1. Data Specification. Volunteer shall be entitled to specify the types of data that represent their Likeness in Appendix A attached hereto, which may encompass, without limitation, photographs, videos, textual annotations, metadata, and any other form of information deemed relevant by Volunteer. Volunteer acknowledges and agrees that there is no obligation on their part to provide data of these specified types to Developers, and that Developers are authorized to independently acquire Likeness Data from publicly available sources.
+
+2.2. License Grant. Volunteer hereby grants to Developers, for the Term and solely for the Purpose, a limited, non-exclusive, non-transferable, and revocable license to utilize, process, modify, adapt, analyze, and reproduce Likeness Data, irrespective of its origin or source, exclusively for the purpose of training the Platform. This license is expressly and unequivocally limited to the Purpose as defined herein and shall not be construed to confer any other rights, express or implied, upon Developers.
+
+2.3. Reservation of Intellectual Property Rights. It is explicitly agreed and understood that nothing in this Agreement shall be interpreted or construed as effectuating a transfer of ownership of any intellectual property rights inherent in the Likeness embodied within the Likeness Data from Volunteer to Developers. Developers explicitly acknowledge and agree that Volunteer retains all rights, title, and interest in and to their Likeness.
+
+VOLUNTEER RIGHTS AND CONTROLS
+
+3.1. Data Specification Control. Volunteer shall retain the right to specify and modify the Volunteer-Specified Data Types detailed in Appendix A, subject to reasonable limitations and upon provision of written notice to Developers outlining any such modifications. Developers hereby acknowledge and shall respect Volunteer's inherent right to determine the scope, nature, and extent of the Volunteer-Specified Data Types.
+
+3.2. Consent for Use Beyond Purpose. Any and all utilization of Likeness Data by Developers that extends beyond the explicitly and precisely defined Purpose shall be contingent upon obtaining express, specific, and fully informed written consent from Volunteer, which consent may be granted or withheld at Volunteer's sole and unfettered discretion. No consent shall be implied or inferred from any act, omission, or statement. This consent mandate shall be applicable to all Likeness Data, irrespective of its source.
+
+3.3. Data Review Rights. Volunteer shall have the right, exercisable upon reasonable prior written notice to Developers, to request a summary detailing the sources of Likeness Data utilized by Developers and to engage in discussions with Developers regarding their compliance with all terms and conditions stipulated within this Agreement.
+
+3.4. Right to Withdraw Data Use Consent. Volunteer reserves the right, at any time and for any reason or no reason, to withdraw their consent for the prospective future use of Likeness Data. Upon Developers' receipt of formal written notice of such withdrawal from Volunteer, Developers shall be obligated to immediately cease any and all further utilization of Likeness Data acquired subsequent to the date of such notice. Developers shall fully comply with the data destruction obligations as articulated in Section 6.2 herein with respect to any Volunteer-provided data in their possession. With respect to publicly available Likeness Data acquired prior to the effective date of the withdrawal notice, Developers shall undertake commercially reasonable efforts to cease further utilization of such data in Platform training within a commercially reasonable timeframe.
+
+3.5. Confidentiality of Volunteer-Provided Data. Developers shall maintain the strictest confidentiality with respect to any and all Likeness Data actively provided by Volunteer to Developers. Developers are expressly prohibited from disclosing, distributing, or otherwise making available such Volunteer-provided data to any third party, individual, or entity without the express, explicit, and prior written consent of Volunteer. The foregoing confidentiality obligations shall not apply to publicly available Likeness Data, and shall be subject to exceptions only where disclosure is strictly mandated by applicable law, in which event Developers shall provide Volunteer with prompt and timely notice to afford Volunteer the opportunity to seek protective orders or other appropriate relief.
+
+DEVELOPERS' OBLIGATIONS AND RESTRICTIONS
+
+4.1. Limited Use. Developers' utilization of Likeness Data shall be strictly and exclusively limited to the Purpose. Any application, exploitation, or use of Likeness Data for any other purpose whatsoever, including but not limited to commercialization, product development extending beyond the Platform, or any objective not directly and unequivocally related to training the Platform to generate consistent characters, is prohibited.
+
+4.2. Data Security Measures. Developers shall implement and maintain commercially reasonable security measures and protocols designed to protect Likeness Data, and specifically any Volunteer-provided data, from any and all forms of unauthorized access, use, disclosure, alteration, or destruction, whether accidental or intentional.
+
+4.3. Transparency and Reporting Obligations. Developers shall, upon receipt of a reasonable request from Volunteer, furnish Volunteer with a comprehensive and general report outlining the modalities by which Likeness Data has been sourced and the manner in which it has been utilized for training the Platform.
+
+4.4. Restrictions on Derivative Works. Developers are expressly prohibited from creating any derivative works based upon, incorporating, or utilizing Likeness Data, except to the strict extent necessary and indispensable for the singular Purpose of training the Platform. For purposes of clarification, any outputs, results, or generated content of the Platform arising from or utilizing Likeness Data shall not be deemed or construed as derivative works for the purposes of this clause, but shall nonetheless remain subject to all restrictions on use and other provisions as delineated throughout this Agreement. Developers are further prohibited from utilizing Likeness Data to train any other machine learning model, platform, or technology, without obtaining explicit, separate, and duly executed written consent from Volunteer for each such discrete instance of proposed use.
+
+4.5. Prohibition on Sub-licensing or Transfer. The limited license extended to Developers under Section 2.2 is explicitly personal and specific to Developers and shall not, under any circumstances, be sub-licensed, assigned, delegated, or transferred to any third party, whether directly, indirectly, by operation of law, or otherwise, without securing the express, explicit, and prior written consent of Volunteer, which consent may be withheld in Volunteer's sole discretion.
+
+WARRANTIES
+
+5.1. Volunteer Warranties. Volunteer hereby represents and warrants that they possess the full legal right, capacity, and authority to specify the Volunteer-Specified Data Types and to grant the licenses as expressly set forth in this Agreement with respect to any Volunteer-provided data.
+
+5.2. Developers Warranties. Developers hereby represent and warrant that they shall utilize Likeness Data solely and exclusively for the Purpose, and in full compliance with all applicable laws, statutes, ordinances, regulations, and the terms and conditions definitively articulated within this Agreement.
+
+TERM AND TERMINATION
+
+6.1. Term. This Agreement shall become effective as of the Date first written above and shall persist for an initial term of {TERM_MONTHS} months (the "Initial Term"), unless earlier terminated in accordance with the provisions of this Article 6. Following the Initial Term, this Agreement shall automatically renew for successive terms of equal duration to the Initial Term, unless and until either party provides formal written notice of non-renewal to the other party at least {NONRENEWAL_DAYS} days prior to the impending expiration date of the then-current term.
+
+6.2. Termination by Volunteer. Volunteer shall be entitled to terminate this Agreement at any time, with or without cause, by providing formal written notice of termination to Developers. Upon effectuation of termination by Volunteer, Developers shall, within {TERMINATION_DAYS} days of formal receipt of such termination notice, at Volunteer's exclusive and sole discretion, elect to either: (a) return to Volunteer all Volunteer-provided data then in Developers' possession or control, delivered in a mutually agreed upon secure digital format; or (b) securely and permanently destroy all Volunteer-provided data in Developers' possession or control and furnish Volunteer with a formal written certification attesting to and evidencing such complete and irreversible destruction. Upon termination by Volunteer, Developers shall, with immediate effect, cease any and all new acquisition and utilization of publicly available Likeness Data, and shall further cease all use of any Volunteer-provided Likeness Data and any outputs directly derived or generated from Volunteer-provided data.
+
+6.3. Termination by Developers. Developers shall be entitled to terminate this Agreement upon provision of {TERMINATION_DAYS} days advance written notice to Volunteer, contingent upon Developers' determination that they no longer require Likeness Data for the Purpose. Upon termination by Developers, Developers shall fully comply with the data return or destruction obligations as set forth in Section 6.2 herein with respect to any and all Volunteer-provided data.
+
+6.4. Survival. Articles 1, 2.3, 3, 4, 6.2, 7, 8, 9, 10, 11, 12, and 13 shall survive any termination of this Agreement, irrespective of the cause for or nature of such termination.
+
+INDEMNIFICATION
+
+7.1. Indemnification by Developers. Developers shall, to the fullest extent permitted by law, indemnify, defend, and hold harmless Volunteer, and Volunteer's affiliates, officers, directors, employees, agents, successors, and assigns (collectively, the "Volunteer Indemnified Parties") from and against any and all claims, actions, demands, suits, proceedings, liabilities, damages, losses, judgments, settlements, costs, and expenses (including, without limitation, reasonable attorneys' fees and disbursements) actually incurred or sustained by the Volunteer Indemnified Parties, arising out of or relating to: (a) any breach, violation, or non-performance of any covenant, representation, warranty, or agreement by Developers under this Agreement; (b) any utilization, application, or exploitation of Likeness Data by Developers in a manner not expressly authorized or permitted by this Agreement; or (c) the operation, functionality, or performance of the Platform or Developers' business activities.
+
+7.2. Indemnification by Volunteer. Volunteer shall, to the fullest extent permitted by law, indemnify, defend, and hold harmless Developers, and Developers' affiliates, officers, directors, employees, agents, successors, and assigns (collectively, the "Developer Indemnified Parties") from and against any and all claims, actions, demands, suits, proceedings, liabilities, damages, losses, judgments, settlements, costs, and expenses (including, without limitation, reasonable attorneys' fees and disbursements) actually incurred or sustained by the Developer Indemnified Parties, arising out of or relating to: (a) any breach, violation, or non-performance of any covenant, representation, warranty, or agreement by Volunteer under this Agreement; or (b) Volunteer's lack of legal right, title, power, or authority to specify the Volunteer-Specified Data Types or to grant the licenses expressly set forth in this Agreement with respect to Volunteer-provided data.
+
+LIMITATION OF LIABILITY
+
+8.1. DISCLAIMER OF WARRANTIES. EXCEPT AS EXPRESSLY AND UNEQUIVOCALLY SET FORTH IN THIS AGREEMENT, LIKENESS DATA IS PROVIDED ON AN "AS IS" AND "WHERE IS" BASIS, AND DEVELOPERS MAKE NO WARRANTIES, REPRESENTATIONS, OR GUARANTEES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, QUIET ENJOYMENT, OR NON-INFRINGEMENT WITH RESPECT TO LIKENESS DATA, ALL OF WHICH ARE HEREBY EXPRESSLY DISCLAIMED TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW.
+
+8.2. LIMITATION ON DAMAGES. TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, IN NO EVENT SHALL EITHER PARTY BE LIABLE TO THE OTHER PARTY FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, EXEMPLARY, OR PUNITIVE DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, LOSS OF REVENUE, BUSINESS INTERRUPTION, LOSS OF ANTICIPATED SAVINGS, LOSS OF DATA, OR DIMINUTION IN VALUE), WHETHER ARISING IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER LEGAL OR EQUITABLE THEORY, ARISING OUT OF OR IN ANY WAY CONNECTED WITH THIS AGREEMENT OR THE USE OF OR INABILITY TO USE LIKENESS DATA, EVEN IF SUCH PARTY HAS BEEN EXPRESSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN ANY EVENT, DEVELOPERS' TOTAL CUMULATIVE AND AGGREGATE LIABILITY TO VOLUNTEER ARISING UNDER OR IN CONNECTION WITH THIS AGREEMENT SHALL NOT, UNDER ANY CIRCUMSTANCES, EXCEED THE TOTAL AMOUNT OF ANY DIRECT COMPENSATION ACTUALLY PAID BY DEVELOPERS TO VOLUNTEER UNDER THIS AGREEMENT IN THE TWELVE (12) MONTH PERIOD IMMEDIATELY PRECEDING THE DATE OF THE EVENT GIVING RISE TO THE APPLICABLE CLAIM.
+
+GOVERNING LAW
+
+9.1. Governing Law. This Agreement shall be exclusively governed by, construed, and enforced in accordance with the laws of the State of Texas and of the United States of America, without giving effect to any choice or conflict of law provision or rule that would cause the application of the laws of any jurisdiction other than those of the State of Texas and the United States of America.
+
+DISPUTE RESOLUTION
+
+10.1. Dispute Resolution. Any dispute, controversy or claim arising out of or relating to this contract, or the breach, termination or invalidity thereof, shall be settled by arbitration in accordance with the rules of the American Arbitration Association.
+
+ENTIRE AGREEMENT
+
+11.1. Entire Agreement. This Agreement, including all appendices and exhibits attached hereto, constitutes the complete, exclusive, and fully integrated agreement and mutual understanding between the parties with respect to the specific subject matter hereof. This Agreement definitively supersedes and extinguishes all prior or contemporaneous discussions, correspondence, negotiations, communications, representations, warranties, or agreements, whether oral or written, between the parties concerning the subject matter hereof.
+
+AMENDMENTS
+
+12.1. Amendments. No alteration, modification, or amendment of any provision of this Agreement shall be valid, binding, or enforceable unless and until such amendment is expressly set forth in a formal written document that is duly executed by authorized representatives of both parties. No course of prior dealing or trade usage shall be relevant to amend, supplement or explain any term used in this Agreement.
+
+NOTICES
+
+13.1. Notices. All notices, requests, demands, waivers, consents, and other communications required or permitted to be given under this Agreement shall be in writing and shall be deemed to have been duly given only if (a) delivered personally, (b) sent by certified or registered mail, return receipt requested, postage prepaid, or (c) transmitted via reputable, nationally recognized overnight courier service, with all delivery charges prepaid, in each case, properly addressed as set forth below:
+
+If to Developers:
+Pierce Zhang
+{PIERCE_ZHANG_ADDRESS}
+
+Alex Biyanov
+{ALEX_BIYANOV_ADDRESS}
+
+If to Volunteer:
+{VOLUNTEER_NAME}
+{VOLUNTEER_ADDRESS}
+
+or to such other address as either party may designate in writing to the other party from time to time in accordance with this Section 13.1. Notices shall be deemed effective upon receipt, or refusal of receipt.
+
+SEVERABILITY
+
+14.1. Severability. If any provision of this Agreement is judicially determined by a court of competent jurisdiction to be invalid, illegal, or unenforceable for any reason, such provision shall be automatically severed, struck, and rendered null and void ab initio, and the remaining provisions of this Agreement shall continue in full force and effect, and shall be construed and enforced as if such invalid, illegal, or unenforceable provision had never been contained herein. To the maximum extent permissible under applicable law, the parties shall, in good faith, endeavor to negotiate and replace such invalid, illegal, or unenforceable provision with a valid, legal, and enforceable provision that most closely and faithfully approximates the original commercial and economic intent and effect of the stricken provision.
+
+FORCE MAJEURE
+
+15.1. Force Majeure. Neither party shall be responsible or have any liability for any failure or delay in performing any of its obligations under this Agreement to the extent such failure or delay is directly and proximately caused by a Force Majeure Event. "Force Majeure Event" shall mean and encompass any event, occurrence, or circumstance beyond a party's reasonable and direct control, and which is not foreseeable or preventable through the exercise of reasonable diligence, including, but not limited to, acts of God, acts of war (declared or undeclared), terrorism, civil or military disturbances, riots, insurrections, fire, unusually severe floods, earthquakes, major epidemics, quarantine restrictions, energy crises, embargoes, acts of government (whether de jure or de facto), strikes, lock-outs, labor disputes, or failures or disruptions of the internet or other essential public utility services.
+
+COUNTERPARTS
+
+16.1. Counterparts. This Agreement may be validly executed in any number of counterparts, each of which, when so executed and delivered, shall be deemed an original, and all of which shall together constitute one and the same fully-integrated instrument and agreement. For all purposes, a facsimile or electronic copy (e.g., PDF) of a signature shall be deemed to be and function as an original signature with the same force and effect as a manually executed original signature.
+
+
+---
+
+IN WITNESS WHEREOF, the parties have caused this Volunteer Data Provision Agreement to be duly executed as of the Date first written above.
+
+DEVELOPERS:
+
+_______________________________
+Pierce Zhang
+
+_______________________________
+Alex Biyanov
+
+VOLUNTEER:
+
+_______________________________
+{VOLUNTEER_NAME}
+
+---
+
+Appendix A: Volunteer-Specified Data Types
+
+{VOLUNTEER_DATA_TYPES}
