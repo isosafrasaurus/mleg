@@ -1,5 +1,5 @@
 VOLUNTEER DATA PROVISION AGREEMENT
-DATE
+Date Effective: (DATE_EFFECTIVE)
 
 BETWEEN
 Pierce Zhang (PIERCE_ZHANG_EMAIL) and Alex Biyanov (ALEX_BIYANOV_EMAIL),
@@ -43,7 +43,7 @@ this defined Purpose, including but not limited to commercial applications or
 public demonstrations outside of formal academic settings, is strictly
 prohibited without explicit written consent from the Volunteer.
 
-1.4. Term means the effective duration of this Agreement, commencing on the Date
+1.4. Term means the effective duration of this Agreement, commencing on the Date Effective
 first written above and continuing until terminated in accordance with Article 6
 herein.
 
@@ -151,7 +151,7 @@ Agreement.
 6. TERM AND TERMINATION
 
 6.1. Term
-This Agreement becomes effective as of the Date first written above and shall
+This Agreement becomes effective as of the Date Effective first written above and shall
 continue for an initial term of TERM_MONTHS months (the "Initial Term"). It will
 automatically renew for successive terms of equal duration unless either party
 provides written notice of non-renewal at least NONRENEW_DAYS days before the
@@ -278,7 +278,7 @@ ________________________________________________________________________________
 SIGNATURE PAGE TO FOLLOW
 
 IN WITNESS WHEREOF, the parties have executed this Volunteer Data Provision
-Agreement as of the Date first written above.
+Agreement as of the Date Effective first written above.
 
 Developers:
 
