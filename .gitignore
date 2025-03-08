@@ -1,4 +1,5 @@
 # Legal
 pretraining/legal/*
 !pretraining/legal/LICENSE
-!pretraining/legal/LICENSE_base.tex
+!pretraining/legal/LICENSE.tex
+!pretraining/legal/LICENSE_create.py

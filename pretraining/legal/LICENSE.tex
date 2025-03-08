@@ -1,21 +1,18 @@
 \documentclass[12pt]{article}
-\usepackage{times}
 \usepackage[margin=1in]{geometry}
-\usepackage{titlesec}
+\usepackage{times, titlesec, fancyhdr, lastpage, xcolor}
+
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0pt}
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-\usepackage{xcolor}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
 
 \begingroup
-  \lccode`\~=`!
+\lccode`\~=`!
 \lowercase{\endgroup
-  \def~#1{\colorbox{yellow}{\textcolor{blue}{\texttt{\detokenize{#1}}}}}
+\def~#1{\colorbox{yellow}{\textcolor{blue}{\texttt{\detokenize{#1}}}}}
 }
 \catcode`\!=\active
 
@@ -25,7 +22,6 @@
 \titlespacing*{\section}{0pt}{2.0ex plus 1ex minus .2ex}{0.5ex plus .2ex}
 
 \begin{document}
-
 \begin{center}
 {\Large \bfseries Volunteer Data Provision Agreement \\[0.2em]
 \large Date Effective: \today} \\
@@ -38,16 +34,15 @@ Pierce Zhang (!{PIERCE_ZHANG_EMAIL}) and Alex Biyanov (!{ALEX_BIYANOV_EMAIL}), h
 
 \section{Definitions}
 {\begingroup
-  \titleformat{\subsection}[runin]
-    {\normalfont\bfseries}{\thesubsection}{1em}{}[]
-  \titlespacing*{\subsection}{0pt}{0.5em}{0.3em}
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{1em}{}[]
+\titlespacing*{\subsection}{0pt}{0.5em}{0.3em}
 
 \subsection{Likeness Data} means any and all data that constitutes an embodiment or representation of the Volunteer's Likeness. For the purposes of this Agreement, ``Likeness'' means the Volunteer's physical character, which includes, but is not limited to, the Volunteer's (i) visual appearance, including photographic, video, and other visual representations of their face and body; and (ii) other distinctive personal attributes, characteristics, or indicia that serve to physically identify the Volunteer. Likeness Data may be derived from (a) data of the types specified by Volunteer in Appendix A attached hereto (the ``Volunteer-Specified Data Types''), which Volunteer may, at their discretion, elect to provide to Developers; and (b) any images, recordings, and data embodying the Volunteer's Likeness that are publicly accessible, which the Developers may independently obtain.
   
 \subsection{Platform} means the \textit{machine learning-enabled granularity} (MLEG) software, including all related, associated, integrated, derivative, or ancillary software, applications, tools, libraries, modules, components, updates, upgrades, enhancements, documentation, and any other software developed, operated, maintained, or provided by Developers, whether currently existing or hereafter created, that directly or indirectly supports, enhances, or interacts with the MLEG software, or that is otherwise used by Developers in connection with the provision of services under this Agreement.
   
 \subsection{Purpose} means the goals of training and testing the Platform to generate consistent character imagery, as intended by Developers and expressly acknowledged by Volunteer, and to demonstrate the Platform's capabilities in formal academic settings. For the purposes of this Agreement, ``formal academic settings" are defined as: (i) presentations or demonstrations at accredited universities, colleges, or research institutions; (ii) presentations at academic conferences, symposia, or workshops; or (iii) publications in peer-reviewed academic journals or conference proceedings. Any use of Likeness Data beyond this defined Purpose, including but not limited to commercial applications or public demonstrations outside of formal academic settings, is strictly prohibited without explicit written consent from the Volunteer.
-
+  
 \subsection{Term} means the effective duration of this Agreement, commencing on the Date Effective first written above and continuing until terminated in accordance with Article 6 herein.
 \par\endgroup}
 
@@ -131,7 +126,7 @@ TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEITHER PARTY SHALL BE LIABLE FOR ANY IN
 This Agreement shall be governed by and construed in accordance with the laws of the State of Texas and the United States of America, without regard to conflicts of law principles.
 
 \section{Dispute Resolution}
-Any dispute, controversy, or claim arising out of or relating to this Agreement or its breach, termination, or invalidity shall be settled by arbitration in accordance with the rules of the American Arbitration Association.
+Any dispute, controversy, or claim arising out of or relating to this Agreement or its breach, termination, or invalidity, except in cases of criminal conduct, shall be addressed through good faith negotiation between the parties. In cases involving criminal conduct, this provision shall not apply, and any such matters shall be subject to appropriate legal proceedings.
 
 \section{Entire Agreement}
 This Agreement, including all appendices and exhibits attached hereto, constitutes the complete and exclusive agreement between the parties regarding its subject matter, superseding all prior negotiations or agreements, whether oral or written.
@@ -159,18 +154,18 @@ If any provision of this Agreement is found to be invalid, illegal, or unenforce
 Neither party shall be liable for any failure or delay in performing its obligations under this Agreement if such failure or delay is caused by a Force Majeure Event. A ``Force Majeure Event" includes any event beyond a party's reasonable control, such as natural disasters, war, terrorism, civil disturbances, epidemics, governmental actions, labor disputes, or disruptions of essential services.
 
 \section{Counterparts}
-This Agreement may be executed in any number of counterparts, each of which is deemed an original, but all of which together constitute one and the same instrument. A facsimile or electronic copy (e.g., PDF) of a signature is deemed as effective as an original signature.
+This Agreement may be executed in any number of counterparts, each of which is deemed an original, but all of which together constitute one and the same instrument. A facsimile or electronic copy, such as in Adobe PDF, of a signature is deemed as effective as an original signature.
 
 \vspace{1em}
 \noindent\rule{\textwidth}{0.4pt} \\
 
 \begin{center}
-    {\textbf{SIGNATURE PAGE TO FOLLOW}}
+{\textbf{SIGNATURE PAGE TO FOLLOW}}
 \end{center}
 \newpage
 
 \begin{center}
-  \textbf{IN WITNESS WHEREOF, the parties have executed this Volunteer Data Provision Agreement as of the Date Effective first written above.}
+\textbf{IN WITNESS WHEREOF, the parties have executed this Volunteer Data Provision Agreement as of the Date Effective first written above.}
 \end{center}
 
 \vspace{1em}
@@ -187,7 +182,7 @@ Alex Biyanov\\[3em]
 
 \newpage
 \begin{center}
-  {\Large\bfseries Appendix A: Volunteer-Specified Data Types}
+{\Large\bfseries Appendix A: Volunteer-Specified Data Types}
 \end{center}
 
 !{DATA_TYPES}
