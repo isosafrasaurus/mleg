@@ -1,5 +1,5 @@
 # Legal
-pretraining/legal/*
-!pretraining/legal/LICENSE
-!pretraining/legal/LICENSE.tex
-!pretraining/legal/LICENSE_create.py
+data/legal/*
+!data/legal/LICENSE
+!data/legal/LICENSE.tex
+!data/legal/LICENSE_create.py
