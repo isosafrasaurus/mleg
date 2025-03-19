@@ -1,8 +1,4 @@
-import os
-import cv2
-import time
-import numpy as np
-import torch
+import os, cv2, time, torch, numpy as np
 from PIL import Image
 from IPython.display import display, clear_output, Image as IPyImage
 from facenet_pytorch import MTCNN, InceptionResnetV1
@@ -14,7 +10,7 @@ def compute_embedding(face_tensor):
     return emb.cpu().numpy()[0]
 
 def fill_face_with_black(image, box):
-    """Fill the region defined by box with black in the image (BGR image)."""
+    """Fill the region defined by box with black in the image."""
     x1, y1, x2, y2 = box
     image[y1:y2, x1:x2] = 0
 
@@ -26,13 +22,7 @@ def box_center(box):
 def euclidean_distance(p1, p2):
     return np.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
 
-# parameters
-input_directory = 'samples2'
-output_directory = 'final'
-embedding_thresh = 0.8
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-def process_volunteer_train(input_directory, output_directory, embedding_thresh, device):
+def process_volunteer_train(input_directory, output_directory, embedding_thresh = 0.8, device = torch.device("cuda" if torch.cuda.is_available() else "cpu")):
     os.makedirs(output_directory, exist_ok=True)
 
     # YOLOv5 for person detection
@@ -49,8 +39,7 @@ def process_volunteer_train(input_directory, output_directory, embedding_thresh,
     target_face_embedding = None
     target_face_box = None
 
-    image_extensions = ('.jpg', '.jpeg', '.png', '.bmp', '.tiff')
-    image_files = sorted([f for f in os.listdir(input_directory) if f.lower().endswith(image_extensions)])
+    image_files = sorted([f for f in os.listdir(input_directory) if f.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.tiff'))])
 
     for filename in image_files:
         image_path = os.path.join(input_directory, filename)
@@ -140,7 +129,7 @@ def process_volunteer_train(input_directory, output_directory, embedding_thresh,
             x1, y1, x2, y2 = p_box
             if x1 <= target_center[0] <= x2 and y1 <= target_center[1] <= y2:
                 person_center = box_center(p_box)
-                offset = euclidean_distance(target_center, person_center)
+                offset = abs(target_center[0] - person_center[0])
                 if offset < best_offset:
                     best_offset = offset
                     best_person_box = p_box
@@ -170,3 +159,5 @@ def process_volunteer_train(input_directory, output_directory, embedding_thresh,
         print("  Saved processed image to", output_path)
 
         time.sleep(0.5)
+
+process_volunteer_train("samples2", "output")
