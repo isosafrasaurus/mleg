@@ -4,7 +4,12 @@ from PIL import Image, ImageDraw, ImageFont
 from facenet_pytorch import MTCNN, InceptionResnetV1
 from IPython.display import display
 
-def compute_face_embeddings_with_display(image_path, device):
+"""
+The three numbers are the confidence thresholds for the three stages of the MTCNN face detection pipeline (P-Net, R-Net, and O-Net).
+They determine the minimum score required at each stage to consider a face candidate valid.
+"""
+
+def compute_face_embeddings_with_display(image_path, device, face_threshold=[0.8, 0.8, 0.8]):
     image = cv2.imread(image_path)
     if image is None:
         raise ValueError(f"Failed to load image from {image_path}")
@@ -12,17 +17,14 @@ def compute_face_embeddings_with_display(image_path, device):
     rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     pil_image = Image.fromarray(rgb_image)
 
-    # Load MTCNN for face detection
-    mtcnn = MTCNN(keep_all=True, device=device)
+    mtcnn = MTCNN(keep_all=True, device=device, thresholds=face_threshold)
     
-    # Load InceptionResnetV1 for computing embeddings
     resnet = InceptionResnetV1(pretrained='vggface2').eval().to(device)
 
     boxes, _ = mtcnn.detect(pil_image)
     if boxes is None or len(boxes) == 0:
         raise ValueError("No faces detected in the image.")
 
-    # Get aligned face tensors; if only one face is detected, ensure batch dimension exists.
     aligned_faces = mtcnn(pil_image)
     if aligned_faces is None:
         raise ValueError("Failed to get aligned faces.")
@@ -48,7 +50,6 @@ def compute_face_embeddings_with_display(image_path, device):
         text_bbox = draw.textbbox((0, 0), text, font=font)
         text_width = text_bbox[2] - text_bbox[0]
         text_height = text_bbox[3] - text_bbox[1]
-        # Draw a filled rectangle behind the text for readability
         draw.rectangle([x1, y1 - text_height, x1 + text_width, y1], fill="red")
         draw.text((x1, y1 - text_height), text, fill="white", font=font)
     
