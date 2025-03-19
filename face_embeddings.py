@@ -3,26 +3,24 @@ from PIL import Image
 from IPython.display import display, clear_output, Image as IPyImage
 from facenet_pytorch import MTCNN, InceptionResnetV1
 
-def compute_embedding(face_tensor):
-    """Compute the face embedding given an aligned face tensor (1 x C x H x W)."""
-    with torch.no_grad():
-        emb = resnet(face_tensor.to(device))
-    return emb.cpu().numpy()[0]
-
-def fill_face_with_black(image, box):
-    """Fill the region defined by box with black in the image."""
-    x1, y1, x2, y2 = box
-    image[y1:y2, x1:x2] = 0
-
-def box_center(box):
-    """Return the center (x,y) of a box given as (x1, y1, x2, y2)."""
-    x1, y1, x2, y2 = box
-    return ((x1 + x2) // 2, (y1 + y2) // 2)
-
-def euclidean_distance(p1, p2):
-    return np.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
-
 def process_volunteer_train(input_directory, output_directory, embedding_thresh = 0.8, device = torch.device("cuda" if torch.cuda.is_available() else "cpu")):
+
+    def compute_embedding(face_tensor):
+        """Compute the face embedding given an aligned face tensor (1 x C x H x W)."""
+        with torch.no_grad():
+            emb = resnet(face_tensor.to(device))
+        return emb.cpu().numpy()[0]
+
+    def fill_face_with_black(image, box):
+        """Fill the region defined by box with black in the image."""
+        x1, y1, x2, y2 = box
+        image[y1:y2, x1:x2] = 0
+
+    def box_center(box):
+        """Return the center (x,y) of a box given as (x1, y1, x2, y2)."""
+        x1, y1, x2, y2 = box
+        return ((x1 + x2) // 2, (y1 + y2) // 2)
+
     os.makedirs(output_directory, exist_ok=True)
 
     # YOLOv5 for person detection
@@ -138,17 +136,33 @@ def process_volunteer_train(input_directory, output_directory, embedding_thresh 
             print("  No person box surrounds target face in", filename)
             continue
 
-        # Crop the Image to the Selected Person Box
-        x1, y1, x2, y2 = best_person_box
+        FACE_MARGIN = 20
+
+        # Decide crop region:
+        # If the target face is fully contained within best_person_box, crop to that.
+        # Otherwise, crop to the face itself with a small margin.
+        bx1, by1, bx2, by2 = best_person_box
+        tx1, ty1, tx2, ty2 = target_box_current
+
+        if tx1 >= bx1 and ty1 >= by1 and tx2 <= bx2 and ty2 <= by2:
+            crop_box = best_person_box
+            print("  Cropping to person box.")
+        else:
+            h, w = image.shape[:2]
+            crop_box = (max(0, tx1 - FACE_MARGIN),
+                        max(0, ty1 - FACE_MARGIN),
+                        min(w, tx2 + FACE_MARGIN),
+                        min(h, ty2 + FACE_MARGIN))
+            print("  Cropping to target face box with margin.")
+
+        # Crop the Image to the determined crop_box
+        x1, y1, x2, y2 = crop_box
         cropped_image = image[y1:y2, x1:x2].copy()
 
-        # Draw the selected person box in green
-        cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-        # Draw the target face box in blue
-        cv2.rectangle(image, (target_box_current[0], target_box_current[1]),
-                      (target_box_current[2], target_box_current[3]), (255, 0, 0), 2)
+        # Draw the selected person box in green and the target face box in blue for visualization.
+        cv2.rectangle(image, (bx1, by1), (bx2, by2), (0, 255, 0), 2)
+        cv2.rectangle(image, (tx1, ty1), (tx2, ty2), (255, 0, 0), 2)
 
-        # Use clear_output to update the display in Jupyter
         clear_output(wait=True)
         temp_path = os.path.join(output_directory, "temp_display.jpg")
         cv2.imwrite(temp_path, image)
