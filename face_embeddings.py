@@ -9,7 +9,10 @@ def display_boxes(image, boxes, title):
     ax.imshow(image)
     if boxes is not None:
         for box in boxes:
-            rect = patches.Rectangle((box[0], box[1]), box[2] - box[0], box[3] - box[1], linewidth=1, edgecolor='r', facecolor='none')
+            corner = (box[0], box[1])
+            width = box[2] - box[0]
+            height = box[3] - box[1]
+            rect = patches.Rectangle(corner, width, height, linewidth = 1, edgecolor = 'r', facecolor = 'none')
             ax.add_patch(rect)
     plt.title(title)
     plt.show()
@@ -64,3 +67,48 @@ def get_average_face_embedding(folder_path, threshold_pnet=0.6, threshold_rnet=0
     average_embedding = embeddings_tensor.mean(dim=0)  # Averaged embedding (512,)
 
     return average_embedding
+  
+def match_faces_in_folder(target_embedding, folder_path, distance_threshold=0.9, threshold_pnet=0.6, threshold_rnet=0.7, threshold_onet=0.9):
+    mtcnn = MTCNN(keep_all=True, thresholds=[threshold_pnet, threshold_rnet, threshold_onet])
+    resnet = InceptionResnetV1(pretrained='vggface2').eval()
+
+    # Ensure target_embedding is a 1D tensor of shape (512,)
+    if target_embedding.ndim == 2:
+        target_embedding = target_embedding.squeeze(0)
+
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        if not filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
+            continue
+        try:
+            image = Image.open(file_path).convert("RGB")
+        except Exception as e:
+            print(f"Error opening {file_path}: {e}")
+            continue
+
+        boxes, _ = mtcnn.detect(image)
+        if boxes is None:
+            print(f"No faces detected in {file_path}")
+            continue
+
+        faces = mtcnn(image)
+        if faces is None:
+            print(f"Could not align faces in {file_path}")
+            continue
+        if isinstance(faces, torch.Tensor) and faces.ndim == 3:
+            faces = faces.unsqueeze(0)  # Ensure batch dimension
+
+        with torch.no_grad():
+            embeddings = resnet(faces)  # Shape: (N, 512)
+
+        # Compute Euclidean distances between each face embedding and the target_embedding.
+        distances = torch.norm(embeddings - target_embedding, dim=1)
+        matches = distances < distance_threshold
+
+        if matches.any():
+            matched_distances = [f"{d.item():.2f}" for d, m in zip(distances, matches) if m]
+            title = f"{filename}: Matches found with distances: " + ", ".join(matched_distances)
+            match_boxes = [box for box, m in zip(boxes, matches) if m]
+            display_boxes(image, match_boxes, title)
+        else:
+            print(f"No matching faces in {file_path}")
