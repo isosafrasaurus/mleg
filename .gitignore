@@ -3,3 +3,6 @@ data/legal/*
 !data/legal/LICENSE
 !data/legal/LICENSE.tex
 !data/legal/LICENSE_create.py
+
+# NOTS
+logs/
