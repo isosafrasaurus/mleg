@@ -13,8 +13,7 @@
 module load GCC/12.3.0 OpenMPI/4.1.5 PyTorch/2.1.2-CUDA-12.1.1
 source ~/environments/comp646/bin/activate
 
-read HF_TOKEN < $SLURM_SUBMIT_DIR/tests/.TOKEN
-echo "$HF_TOKEN" | huggingface-cli login --stdin
+export HF_TOKEN=$(< $SLURM_SUBMIT_DIR/tests/.TOKEN)
 
 USER_SCRATCH=$SHARED_SCRATCH/$USER
 export HF_HOME=$USER_SCRATCH/.cache/huggingface
