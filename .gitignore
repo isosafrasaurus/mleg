@@ -1,6 +1,6 @@
 # Legal
-data/legal/*
-!data/legal/LICENSE
+data/
+!data/LICENSE
 
 # NOTS
 logs/
