@@ -30,4 +30,5 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 # python $JOBDIR/flux_test.py
-accelerate launch --num_processes 4 $JOBDIR/flux_test.py
+accelerate launch --num_processes 4 --num_machines 1 --mixed_precision="fp16" --dynamo_backend="no" $JOBDIR/flux_test.py
+

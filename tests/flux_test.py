@@ -5,11 +5,6 @@ from huggingface_hub import snapshot_download
 repo = snapshot_download("black-forest-labs/FLUX.1-dev", token=os.environ["HF_TOKEN"])
 pipe = DiffusionPipeline.from_pretrained(repo, low_cpu_mem_usage=True)
 
-# Cast UNet & VAE to fp16, leave text_encoder as fp32
-pipe.unet.to(torch.float16).to("cuda")
-pipe.vae.to(torch.float16).to("cuda")
-pipe.text_encoder.to(torch.float32).to("cuda")
-
 pipe.enable_attention_slicing()
 
 prompt = "Astronaut in a jungle, cold color palette, muted colors, detailed, 8k"
