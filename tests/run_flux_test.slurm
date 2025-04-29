@@ -2,11 +2,11 @@
 #SBATCH --job-name=diffusers_cached
 #SBATCH --account=commons
 #SBATCH --partition=commons
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:4
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=256G
-#SBATCH --time=00:30:00
+#SBATCH --time=01:00:00
 #SBATCH --output=logs/diffusers_%j.out
 #SBATCH --error=logs/diffusers_%j.err
 
@@ -30,4 +30,5 @@ cd $JOBDIR
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-python $JOBDIR/flux_test.py
+# python $JOBDIR/flux_test.py
+accelerate launch --num_processes 4 $JOBDIR/flux_test.py
