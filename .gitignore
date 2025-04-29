@@ -6,3 +6,4 @@ data/legal/*
 
 # NOTS
 logs/
+.TOKEN
