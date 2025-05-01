@@ -5,7 +5,7 @@ pipe = FluxPipeline.from_pretrained(
     "black-forest-labs/FLUX.1-dev",
     torch_dtype=torch.bfloat16,       # or torch.float16 if you prefer
     safety_checker=None,               # (optional) if you want to disable safety checks
-    device_map="auto"
+    device_map="balanced"
 )
 pipe = pipe.to("cuda")               # move to GPU
 pipe.enable_model_cpu_offload()
