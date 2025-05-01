@@ -12,6 +12,7 @@ conda install -c conda-forge gcc=13.2 ipykernel
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
 export PATH=/usr/local/cuda/bin/:$PATH
+export PATH=/home/ubuntu/miniforge3/envs/cuda118env/lib/:$PATH
 wget https://github.com/bitsandbytes-foundation/bitsandbytes/archive/refs/tags/0.45.5.tar.gz
 tar -xf 0.45.5.tar.gz
 cd bitsandbytes-0.45.5/
@@ -22,3 +23,5 @@ cd ..
 
 pip install transformers accelerate peft -q
 pip install git+https://github.com/huggingface/diffusers.git -q
+pip install sentencepiece protobuf datasets
+pip install google-generativeai pillow
