@@ -11,6 +11,7 @@ conda install -c conda-forge gcc=13.2 ipykernel
 
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
+export PATH=/usr/local/cuda/bin/:$PATH
 wget https://github.com/bitsandbytes-foundation/bitsandbytes/archive/refs/tags/0.45.5.tar.gz
 tar -xf 0.45.5.tar.gz
 cd bitsandbytes-0.45.5/
@@ -18,3 +19,6 @@ cmake -DCOMPUTE_BACKEND=/usr/local/cuda/bin/cuda/nvcc -S .
 make
 pip install .
 cd ..
+
+pip install transformers accelerate peft -q
+pip install git+https://github.com/huggingface/diffusers.git -q
