@@ -1,3 +1,5 @@
+cd /home/ubuntu
+
 conda create -n gcc13env
 conda activate gcc13env
 conda install -c conda-forge gcc=13.2 ipykernel
@@ -6,3 +8,13 @@ conda install -c conda-forge gcc=13.2 ipykernel
 # "env" : {
 # "PATH": "/home/ubuntu/miniforge3/envs/gcc13env/bin/:${PATH}"
 # }
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+wget https://github.com/bitsandbytes-foundation/bitsandbytes/archive/refs/tags/0.45.5.tar.gz
+tar -xf 0.45.5.tar.gz
+cd bitsandbytes-0.45.5/
+cmake -DCOMPUTE_BACKEND=/usr/local/cuda/bin/cuda/nvcc -S .
+make
+pip install .
+cd ..
