@@ -1,7 +1,7 @@
 Large-scale text-to-image diffusion models offer unprecedented generative capabilities,
 yet tailoring them to synthesize specific subjects, such as individuals, remains
-a challenge. This report details a project focused on personalizing the
-Black Forest Labs FLUX.1-dev model using Low-Rank Adaptation (LoRA). We describe
+a challenge. This project focuses on personalizing the Black Forest Labs
+FLUX.1-dev model using Low-Rank Adaptation (LoRA). We describe
 a preprocessing pipeline leveraging MTCNN and facial embeddings for robust subject
 identification and data preparation. We then rigorously detail the mathematical
 formulation of LoRA and its application to the attention and feed-forward layers
