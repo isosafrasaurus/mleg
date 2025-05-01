@@ -14,7 +14,37 @@ export PIP_CACHE_DIR=$SHARED_SCRATCH/$USER/.cache/pip
 mkdir -p $PIP_CACHE_DIR
 
 # Since git disallowed on compute nodes, clone from home
-
+cp $HOME/mleg/hpc/flux_inference_test.py $SHARED_SCRATCH/$USER/$TEMP_VENV
 pip install bitsandbytes transformers accelerate peft
 cp -r $HOME/git_to_compute/diffusers $SHARED_SCRATCH/$USER/$TEMP_VENV
+pip install $SHARED_SCRATCH/$USER/$TEMP_VENV/diffusers
+pip install sentencepiece
 
+export HF_HOME=$SHARED_SCRATCH/$USER/.cache/huggingface
+export TRANSFORMERS_CACHE=$HF_HOME
+export DIFFUSERS_CACHE=$HF_HOME
+mkdir -p $HF_HOME
+
+TOKEN_FILE="$HOME/.HF_TOKEN"
+
+if [ -f "$TOKEN_FILE" ]; then
+    HF_TOKEN=$(<"$TOKEN_FILE")
+    HF_TOKEN=$(echo "$HF_TOKEN" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+    if [ -n "$HF_TOKEN" ]; then
+        echo "Hugging Face token found and read from $TOKEN_FILE."
+        accelerate config default
+        huggingface-cli login --token "$HF_TOKEN"
+    else
+        echo "Error: Hugging Face token file $TOKEN_FILE is empty."
+        echo "Please ensure your token is in the file."
+        exit 1
+    fi
+else
+    echo "Error: Hugging Face token file $TOKEN_FILE not found."
+    echo "Please create this file and put your Hugging Face token in it."
+    exit 1
+fi
+
+accelerate config default
+accelerate launch flux_inference_test.py
